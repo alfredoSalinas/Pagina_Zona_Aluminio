@@ -1,0 +1,16 @@
+
+const SIGN_OUT = 'SIGN_OUT';
+const SIGN_IN = 'SING_IN';
+const GET_CLIENT = 'GET_CLIENTS'
+const ADD_CLIENT = 'ADD_CLIENTS'
+const ADD_QUOTE = 'ADD_QUOTE'
+const ADD_PRODUCT = 'ADD_PRODUCT'
+
+export {
+    SIGN_IN,
+    SIGN_OUT,
+    GET_CLIENT,
+    ADD_CLIENT,
+    ADD_QUOTE,
+    ADD_PRODUCT,
+}
