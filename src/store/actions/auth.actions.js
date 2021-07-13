@@ -1,4 +1,4 @@
-import {SIGN_OUT, SIGN_IN} from '../types';
+import {SIGN_OUT, SIGN_IN, IS_READY} from '../types';
 
 const signIn = (user) => ({
     type: SIGN_IN,
@@ -11,4 +11,9 @@ const signOut = () => {
   };
 };
 
-export {signIn, signOut};
+const authReady = (auth) =>({
+  type: IS_READY,
+  payload: auth
+})
+
+export {signIn, signOut, authReady};

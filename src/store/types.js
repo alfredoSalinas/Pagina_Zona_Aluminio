@@ -1,14 +1,17 @@
-
+const ADMIN = 'ADMIN';
 const SIGN_OUT = 'SIGN_OUT';
 const SIGN_IN = 'SING_IN';
+const IS_READY = 'IS_READY'
 const GET_CLIENT = 'GET_CLIENTS'
 const ADD_CLIENT = 'ADD_CLIENTS'
 const ADD_QUOTE = 'ADD_QUOTE'
 const ADD_PRODUCT = 'ADD_PRODUCT'
 
 export {
+    ADMIN,
     SIGN_IN,
     SIGN_OUT,
+    IS_READY,
     GET_CLIENT,
     ADD_CLIENT,
     ADD_QUOTE,

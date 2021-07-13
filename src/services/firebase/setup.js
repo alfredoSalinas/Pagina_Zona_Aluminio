@@ -10,7 +10,11 @@ import "firebase/firestore";
     appId: "1:980828415808:web:c25222741cb76f8b157ca5"
   };
 
-const firebaseApp=firebase.initializeApp(firebaseConfig);
-const db=firebase.firestore();
+firebase.initializeApp(firebaseConfig);
 
-export default db
+export const db = firebase.firestore();
+export const auth = firebase.auth();
+
+db.settings({
+  timestampsInSnapshots: true,
+})

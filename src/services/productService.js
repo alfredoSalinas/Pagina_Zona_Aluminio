@@ -1,4 +1,5 @@
-import db from '../firebase.config'
+/*
+import { db } from './firebase'
 import firebase from 'firebase/app'
 import storage from 'firebase/storage'
 
@@ -15,6 +16,11 @@ export const authenticate = ()=> {
 		})
 }
 
+export const getDocumentos = (coleccion) =>{
+  return db.collection(coleccion)
+    .get()
+}
+
 export const getProductos = ()=>{
     return db.collection('productos')
         .get();
@@ -23,9 +29,15 @@ export const getProductos = ()=>{
 export const createProducto = (data) => {
     return db.collection('productos')
         .doc(data.nombre)
-        .set
-        (data);
+        .set(data);
 };
+
+export const createPedido = (data) => {
+    return db.collection('pedidos')
+        .doc(data.id)
+        .set(data);
+};
+
 
 export const getGroceryList = groceryListId => {
     return db.collection('groceryLists')
@@ -42,3 +54,5 @@ export const getFotoProducto = idFoto => {
           })
     return urlFoto
 }
+
+*/

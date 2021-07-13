@@ -12,22 +12,25 @@ import { datos } from '../store/datos'
 import { useSelector, useDispatch } from 'react-redux'
 import {addOrder} from '../store/actions/quote.actions'
 import { useEffect } from 'react';
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import Badge from '@material-ui/core/Badge';
 import ShoppingCart from '@material-ui/icons/ShoppingCart';
+import { getClientes } from '../services/firebase'
+import { useState } from 'react';
+
 
 const columns = [
-  { id: 'codigo', label: 'Codigo', minWidth: 30 },
-  { id: 'descripcion', label: 'Descripcion', minWidth: 100 },
+  { id: 'NIT', label: 'Nit', minWidth: 30 },
+  { id: 'nombre', label: 'Nombre', minWidth: 100 },
   {
-    id: 'unidad',
-    label: 'Unidad',
+    id: 'direccion',
+    label: 'Direccion',
     minWidth: 30,
     align: 'center',
   },
   {
-    id: 'precio',
-    label: 'Precio',
+    id: 'telefono',
+    label: 'Telefono',
     minWidth: 30,
     align: 'right',
   },
@@ -48,9 +51,11 @@ const useStyles = makeStyles({
   },
 });
 
-export default function DataTable() {
-  const rows = useSelector(state=>state.product.products)
+export default function Clientes() {
+  const rows = useSelector(state=>state.client.clientes)
   const orders = useSelector(state=>state.quote.orders)
+  const isSignin = useSelector(state=>state.auth.isSignin)
+  const isAdmin = useSelector(state=>state.admin.isAdmin)
   const classes = useStyles();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -75,30 +80,23 @@ const buscarProducto = (valor)=>{
 
   let r = new RegExp(valor, 'ig')
   const p =rows.filter((item)=>{
-    return r.test(item.descripcion)
+    return r.test(item.nombre) || r.test(item.NIT)
   })
   setProductos(p)
 }
 
-const cotizar = (row)=>{
-    const pedido = {
-        "codigo": row.codigo,
-        "descripcion": row.descripcion,
-        "cantidad": 1,
-        "unidad": row.unidad,
-        "precio": row.precio,
-    }
-    dispatch(addOrder(pedido))
+const cliente = () =>{
+  getClientes((cliente)=>{
+    console.log(cliente)
+  })
 }
 
   return (
+    <>
+    {isAdmin && isSignin ? (
     <Paper className={classes.root}>
+      <button onClick={cliente}>Clientes</button>
       <input type="text" style={{marginRight: 40 }} onChange={(e)=> buscarProducto(e.target.value)} />
-      <Link to="/pedidos" style={{textDecoration: 'none', color: 'inherit'}}>
-        <Badge badgeContent={orders.length} color="primary">
-          <ShoppingCart />
-        </Badge>
-      </Link>
       <TableContainer className={classes.container}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
@@ -117,14 +115,14 @@ const cotizar = (row)=>{
           <TableBody>
             {productos.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
               return (
-                <TableRow hover role="checkbox" tabIndex={-1} key={row.codigo} >
+                <TableRow hover role="checkbox" tabIndex={-1} key={row.NIT} >
                   {columns.map((column) => {
                     const value = row[column.id];
                     return (
                       <TableCell key={column.id} align={column.align} style={{fontSize: 10}}>
                         {column.format && typeof value === 'number' ? column.format(value) : value}
                         { column.id === 'accion' ? <button onClick={()=>{
-                          cotizar(row)
+
                         }
                         }
                         >Add</button> : null
@@ -149,5 +147,8 @@ const cotizar = (row)=>{
         onChangeRowsPerPage={handleChangeRowsPerPage}
       />
     </Paper>
+  ) : <Redirect to="/" />
+  }
+  </>
   );
 }
