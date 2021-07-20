@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
+import Hidden from '@material-ui/core/Hidden';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -20,7 +21,7 @@ import { useSelector, useDispatch } from 'react-redux'
 //import db from '../firebase.config'
 import firebase from 'firebase/app'
 import { Avatar } from '@material-ui/core'
-
+import MenuListComposition from '../common/components/menu'
 import logo from '../images/logo.png'
 import {
   Link
@@ -159,12 +160,16 @@ const useStyles = makeStyles((theme) =>
 
   return (
     <div className={classes.root} style={{position: 'relative'}} >
-      <AppBar position="fixed" style={{backgroundColor: '#218c74'}}>
+      <AppBar position= 'fixed' style={{backgroundColor: '#218c74'}}>
         <Toolbar>
           <img src={logo} width="100px" />
           <Typography variant="h6" className={classes.title}>
 
           </Typography>
+          <Hidden xsDown >
+          <MenuListComposition />
+          </Hidden>
+          
           {isSignin ? <Avatar src={userData && userData.foto} onClick={logout}/>:
           <IconButton
             edge="start"
@@ -176,13 +181,16 @@ const useStyles = makeStyles((theme) =>
             <AccountCircle />
           </IconButton>
           }
+          <Hidden smUp >
           <IconButton color="inherit"
           aria-label="open drawer"
           edge="end"
           onClick={handleDrawerOpen}
           >
-            <MenuIcon />
+          <MenuIcon />
           </IconButton>
+          </Hidden>
+          
         </Toolbar>
       </AppBar>
       <Drawer
@@ -200,29 +208,31 @@ const useStyles = makeStyles((theme) =>
           </IconButton>
         </div>
         <Divider />
-        <List>
-            <ListItem >
-            <Link
-              to="/"
+        <li>
+          <Link to="/" 
+            style={{textDecoration: 'none', color: 'inherit'}}
+            onClick={handleDrawerClose}>
+            Presentacion
+          </Link>
+        </li>
+        <details>
+          <summary>Aluminio</summary>
+          <ul>
+            <li>Alumnio 1</li>
+            <li>Alumnio 2</li>
+          </ul>
+        </details>
+        <details>
+          <summary>Vidrio templado</summary>
+          <ul>
+            <li><Link to="/herrajes" 
               style={{textDecoration: 'none', color: 'inherit'}}
-              onClick={handleDrawerClose}
-            >Inicio</Link>
-            </ListItem>
-            <ListItem >
-            <Link
-              to="/clientes"
-              style={{textDecoration: 'none', color: 'inherit'}}
-              onClick={handleDrawerClose}
-            >Clientes</Link>
-            </ListItem>
-            <ListItem >
-            {userData!=null ?
-            <Link to="/productos" style={{textDecoration: 'none', color: 'inherit'}}
-            onClick={handleDrawerClose}
-            >Productos</Link> : null
-            }
-            </ListItem>
-        </List>
+              onClick={handleDrawerClose}>
+              Herrajes correr 1
+            </Link></li>
+            <li>Herrajes 2</li>
+          </ul>
+        </details>
       </Drawer>
     </div>
   );

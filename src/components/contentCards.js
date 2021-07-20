@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
-import ComponentCard from './componentCard';
+import ComponentCard from '../common/components/componentCard';
 import foto1 from '../images/perfiles.jpeg'
 import foto2 from '../images/acPerfiles.jpeg'
 import foto3 from '../images/templado.jpeg'
