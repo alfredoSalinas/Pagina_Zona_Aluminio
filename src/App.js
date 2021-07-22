@@ -15,7 +15,8 @@ import quoteReducer from './store/reducers/quote.reducer'
 import authReducer from './store/reducers/auth.reducer';
 import adminReducer from './store/reducers/admin.reducer'
 import List from './components/List';
-import HerrajesCards from './common/components/herrajesCards';
+import KitsCards from './pages/kitsCards';
+import HerrajesCards from './pages/herrajesCards';
 import Login from './components/login';
 import Clientes from './components/clientes'
 import Root from './components/root'
@@ -73,6 +74,7 @@ function App() {
             <Switch className="App">
               <GuardRoute exact path="/" component={ContentMain} />
               <Route exact path="/productos" component={DataTable} />
+              <Route exact path="/kits" component={KitsCards} />
               <Route exact path="/herrajes" component={HerrajesCards} />
               <Route exact path="/pedidos" component={List} />
               <Route exact path="/clientes" component={Clientes} />

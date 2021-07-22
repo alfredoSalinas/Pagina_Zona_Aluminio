@@ -24,6 +24,9 @@ const useStyles = makeStyles((theme) => ({
   link: {
     textDecoration: 'none',
     color: 'inherit',
+  },
+  menu:{
+    color: '#fff'
   }
 }));
 
@@ -93,19 +96,20 @@ export default function MenuListComposition() {
 
   return (
     <div >
-			<Button>
+			<Button className={classes.menu}>
         <Link to="/" className={classes.link} >Presentacion</Link>
       </Button>
       <Button ref={anchorRef}
         aria-controls={open ? 'menu-list-grow' : undefined}
         aria-haspopup="true"
+        className={classes.menu}
         onClick={handleToggle}>
         Productos
       </Button>
-      <Button>
+      <Button className={classes.menu}>
         <Link to="/productos" className={classes.link}>Cotizar</Link>
       </Button>
-      <Button>
+      <Button className={classes.menu}>
         <Link to="/tutoriales" className={classes.link}>Tutoriales</Link>
       </Button>  
       <ProductosPopper 

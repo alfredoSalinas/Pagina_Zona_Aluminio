@@ -160,7 +160,7 @@ const useStyles = makeStyles((theme) =>
 
   return (
     <div className={classes.root} style={{position: 'relative'}} >
-      <AppBar position= 'fixed' style={{backgroundColor: '#218c74'}}>
+      <AppBar position= 'fixed' style={{backgroundColor: '#444'}}>
         <Toolbar>
           <img src={logo} width="100px" />
           <Typography variant="h6" className={classes.title}>
@@ -225,10 +225,15 @@ const useStyles = makeStyles((theme) =>
         <details>
           <summary>Vidrio templado</summary>
           <ul>
+            <li><Link to="/kits" 
+              style={{textDecoration: 'none', color: 'inherit'}}
+              onClick={handleDrawerClose}>
+              Kits
+            </Link></li>
             <li><Link to="/herrajes" 
               style={{textDecoration: 'none', color: 'inherit'}}
               onClick={handleDrawerClose}>
-              Herrajes correr 1
+              Herrajes correr
             </Link></li>
             <li>Herrajes 2</li>
           </ul>

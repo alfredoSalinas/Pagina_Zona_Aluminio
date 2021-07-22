@@ -25,13 +25,16 @@ const ProductosPopper =({open, menu, close, key, subMenu, subOpen, menuToggle})=
               <Paper>
                 <ClickAwayListener onClickAway={close}>
                   <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={key}>
-                    <MenuItem onClick={close}>Aluminio</MenuItem>
+                    <MenuItem onClick={close}>Perfiles de Aluminio</MenuItem>
+                    <MenuItem onClick={close}>Quincalleria</MenuItem>
                     <MenuItem ref={subMenu} aria-controls={subOpen ? 'menu-menu-grow' : undefined}
-          aria-haspopup="true" onClick={menuToggle}>Vidrio
+          aria-haspopup="true" onClick={menuToggle}>Accesosrios de Vidrio Templado
                       <ListItemIcon>
             <ArrowRight fontSize="small" />
           </ListItemIcon>
                     </MenuItem>
+                    <MenuItem onClick={close}>Barandas</MenuItem>
+                    <MenuItem onClick={close}>Placas</MenuItem>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

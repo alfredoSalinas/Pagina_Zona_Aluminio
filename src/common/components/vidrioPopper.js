@@ -26,7 +26,14 @@ const VidrioPopper =({open, menu, close, key})=>{
                     <ClickAwayListener onClickAway={close}>
                         <MenuList autoFocusItem={open} id="menu-menu-grow" onKeyDown={key}>
                             <MenuItem onClick={close}>
-                                <Link to="/herrajes" style={{textDecoration: 'none', color: 'inherit'}}>Herraje</Link>
+                                <Link to="/kits" style={{textDecoration: 'none', color: 'inherit'}}>
+                                    Kits
+                                </Link>
+                            </MenuItem>
+                            <MenuItem onClick={close}>
+                                <Link to="/herrajes" style={{textDecoration: 'none', color: 'inherit'}}>
+                                    Herraje de correr
+                                </Link>
                             </MenuItem>                    
                         </MenuList>
                     </ClickAwayListener>

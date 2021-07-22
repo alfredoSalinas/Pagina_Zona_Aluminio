@@ -1,16 +1,11 @@
 import React from 'react'
-import { Container } from '@material-ui/core';
 import Fab from '@material-ui/core/Fab';
 import Facebook from '@material-ui/icons/Facebook';
 import WhatsApp from '@material-ui/icons/WhatsApp'
 import Email from '@material-ui/icons/Email';
-import aluminio from '../images/tipos-de-aluminio.jpg'
 import portada from '../assets/portada/portada.jpg'
 import portada2 from '../assets/portada/portada2.jpg'
-import Galeria from './galeria';
-import ContentCards from './contentCards';
-import HerrajesCards from '../common/components/herrajesCards';
-import ImageCarousel from './galeria2'
+
 //import { salir } from '../services/firebase'
 
 const ContentMain = ()=> {
