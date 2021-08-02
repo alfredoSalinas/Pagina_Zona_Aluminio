@@ -1,7 +1,7 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import {
-    Link
+  Link
 } from "react-router-dom";
 import Button from '@material-ui/core/Button';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
@@ -12,36 +12,50 @@ import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import ArrowRight from '@material-ui/icons/ArrowRight';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
+import MenuPopperVidrio from './menuPopperVidrio';
+import MenuPopperAluminio from './menuPopperAluminio';
 
 
-const ProductosPopper =({open, menu, close, key, subMenu, subOpen, menuToggle})=>{
-    return (
-        <Popper open={open} anchorEl={menu.current} role={undefined} transition disablePortal>
-          {({ TransitionProps, placement }) => (
-            <Grow
-              {...TransitionProps}
-              style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
-            >
-              <Paper>
-                <ClickAwayListener onClickAway={close}>
-                  <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={key}>
-                    <MenuItem onClick={close}>Perfiles de Aluminio</MenuItem>
-                    <MenuItem onClick={close}>Quincalleria</MenuItem>
-                    <MenuItem ref={subMenu} aria-controls={subOpen ? 'menu-menu-grow' : undefined}
-          aria-haspopup="true" onClick={menuToggle}>Accesosrios de Vidrio Templado
-                      <ListItemIcon>
-            <ArrowRight fontSize="small" />
-          </ListItemIcon>
-                    </MenuItem>
-                    <MenuItem onClick={close}>Barandas</MenuItem>
-                    <MenuItem onClick={close}>Placas</MenuItem>
-                  </MenuList>
-                </ClickAwayListener>
-              </Paper>
-            </Grow>
-          )}
-      </Popper>
-    )
+const ProductosPopper = ({ open, menu, close, key }) => {
+  return (
+    <Popper open={open} anchorEl={menu.current} role={undefined} transition disablePortal>
+      {({ TransitionProps, placement }) => (
+        <Grow
+          {...TransitionProps}
+          style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
+        >
+          <Paper>
+            <ClickAwayListener onClickAway={close}>
+              <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={key}>
+                <MenuPopperAluminio close={close} />
+                <MenuItem onClick={close}>
+                  <Link to="/quincalleria" style={{ textDecoration: 'none', color: 'inherit' }} >
+                    Quincalleria
+                  </Link>
+                </MenuItem>
+                <MenuItem onClick={close}>
+                  <Link to="/jaladores" style={{ textDecoration: 'none', color: 'inherit' }} >
+                    Jaladores
+                  </Link>
+                </MenuItem>
+                <MenuPopperVidrio close={close} />
+                <MenuItem onClick={close}>
+                <Link to="/barandas" style={{ textDecoration: 'none', color: 'inherit' }} >
+                    Barandas
+                  </Link>
+                </MenuItem>
+                <MenuItem onClick={close}>
+                <Link to="/placas" style={{ textDecoration: 'none', color: 'inherit' }} >
+                    Placas
+                  </Link>
+                </MenuItem>
+              </MenuList>
+            </ClickAwayListener>
+          </Paper>
+        </Grow>
+      )}
+    </Popper>
+  )
 }
 
 export default ProductosPopper

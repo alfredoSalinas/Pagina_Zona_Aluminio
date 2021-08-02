@@ -1,6 +1,8 @@
-body {
-  
+@font-face {
+  font-family: "mentone";
+  src: url("./assets/fonts/mentone-semibol.ttf") format("truetype");
 }
+
 
 .App {
   text-align: center;

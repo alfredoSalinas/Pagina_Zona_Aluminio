@@ -7,14 +7,14 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
 import { SlowMotionVideo } from '@material-ui/icons';
+import Colors from '../styles/colors';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 350,
-    //backgroundColor: '#ff6d00',
-    borderStyle: 'solid',
+    border: 'solid',
     borderWidth: 2,
-    borderColor: '#1b5e20'
+    borderColor: Colors.primary
   },
   media: {
     width: '100%',
@@ -44,14 +44,17 @@ const ComponentCard = ({tarjeta})=> {
 
   return (
     <Card className={classes.root}>
+      <CardHeader
+        title={tarjeta.title}
+      />
       <CardMedia
         title={tarjeta.description}
       >
         <img src={tarjeta.foto} className={classes.media}/>
       </CardMedia>
       <CardContent style={{borderTop: 'solid'}}>
-        <Typography variant="body2" color="textSecondary" component="p" borderStyle>
-          {tarjeta.title}
+        <Typography variant="body2" color="textSecondary" component="p">
+          {tarjeta.description}
         </Typography>
       </CardContent>
       

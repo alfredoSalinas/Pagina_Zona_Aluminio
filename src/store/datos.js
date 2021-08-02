@@ -1,5 +1,244 @@
 //datos
 
+export const quincalleria = [
+  {
+    "Nro": 1,
+    "DESCRIPCION": "Burlete L-20 V-3mm (100 m)"
+  },
+  {
+    "Nro": 2,
+    "DESCRIPCION": "Burlete L-20 V-4mm (100 m)"
+  },
+  {
+    "Nro": 3,
+    "DESCRIPCION": "Burlete L-25 (100 mts.) Nal."
+  },
+  {
+    "Nro": 4,
+    "DESCRIPCION": "burlete L-25 V 5,6mm (100m)"
+  },
+  {
+    "Nro": 5,
+    "DESCRIPCION": "Cuña L-32 11mm (100 m)"
+  },
+  {
+    "Nro": 6,
+    "DESCRIPCION": "Cuña L-42 13mm (100 m)"
+  },
+  {
+    "Nro": 7,
+    "DESCRIPCION": "Felpa 7x7"
+  },
+  {
+    "Nro": 8,
+    "DESCRIPCION": "Felpa L-20"
+  },
+  {
+    "Nro": 9,
+    "DESCRIPCION": "Felpa L-25"
+  },
+  {
+    "Nro": 10,
+    "DESCRIPCION": "Felpa 5x7"
+  },
+  {
+    "Nro": 11,
+    "DESCRIPCION": "Felpa 5X10"
+  },
+  {
+    "Nro": 12,
+    "DESCRIPCION": "Ruedas L-20"
+  },
+  {
+    "Nro": 13,
+    "DESCRIPCION": "Ruedas L-25"
+  },
+  {
+    "Nro": 14,
+    "DESCRIPCION": "Ruedas L-4000"
+  },
+  {
+    "Nro": 15,
+    "DESCRIPCION": "ruedas dobles"
+  },
+  {
+    "Nro": 16,
+    "DESCRIPCION": "ruedas simple regulable B"
+  },
+  {
+    "Nro": 17,
+    "DESCRIPCION": "Ruedas de box"
+  },
+  {
+    "Nro": 18,
+    "DESCRIPCION": "seguro uña Nat/Ch/Ng"
+  },
+  {
+    "Nro": 19,
+    "DESCRIPCION": "seguro uña Nat/Ng metalico"
+  },
+  {
+    "Nro": 20,
+    "DESCRIPCION": "Trancas  nat/ng/ch eco"
+  },
+  {
+    "Nro": 21,
+    "DESCRIPCION": "Trancas nat/ng/ch curvo"
+  },
+  {
+    "Nro": 22,
+    "DESCRIPCION": "Trancas nat/ng/ch de calar"
+  },
+  {
+    "Nro": 23,
+    "DESCRIPCION": "Guias exteriores"
+  },
+  {
+    "Nro": 24,
+    "DESCRIPCION": "Guias interiores"
+  },
+  {
+    "Nro": 25,
+    "DESCRIPCION": "brazos de 25cm"
+  },
+  {
+    "Nro": 26,
+    "DESCRIPCION": "brazos de 30cm"
+  },
+  {
+    "Nro": 27,
+    "DESCRIPCION": "brazos de 40cm"
+  },
+  {
+    "Nro": 28,
+    "DESCRIPCION": "brazos de 50cm"
+  },
+  {
+    "Nro": 29,
+    "DESCRIPCION": "brazos de 60cm"
+  },
+  {
+    "Nro": 30,
+    "DESCRIPCION": "brazos de 70cm"
+  },
+  {
+    "Nro": 31,
+    "DESCRIPCION": "Celocia de 2 aspas (30 cm.) simple"
+  },
+  {
+    "Nro": 32,
+    "DESCRIPCION": "Celocia de 3 aspas (44 cm.) simple"
+  },
+  {
+    "Nro": 33,
+    "DESCRIPCION": "Celocia de 4 aspas (58 cm.) simple"
+  },
+  {
+    "Nro": 34,
+    "DESCRIPCION": "Celocia de 2 aspas (30 cm.) inter"
+  },
+  {
+    "Nro": 35,
+    "DESCRIPCION": "Celocia de 3 aspas (44 cm.) inter"
+  },
+  {
+    "Nro": 36,
+    "DESCRIPCION": "Celocia de 4 aspas (44 cm.) inter"
+  },
+  {
+    "Nro": 37,
+    "DESCRIPCION": "Celocia de 2 aspas (30 cm.) ref"
+  },
+  {
+    "Nro": 38,
+    "DESCRIPCION": "Celocia de 3 aspas (44 cm.) ref"
+  },
+  {
+    "Nro": 39,
+    "DESCRIPCION": "Celocia de 4 aspas (58 cm.) ref"
+  },
+  {
+    "Nro": 40,
+    "DESCRIPCION": "Celocia de 5 aspas (72 cm.) ref"
+  },
+  {
+    "Nro": 41,
+    "DESCRIPCION": "Corta vidrios"
+  },
+  {
+    "Nro": 42,
+    "DESCRIPCION": "Ventosas 3 copas 135 k"
+  },
+  {
+    "Nro": 43,
+    "DESCRIPCION": "Ventosas 3 copas 230 k"
+  },
+  {
+    "Nro": 44,
+    "DESCRIPCION": "ventosa 2 copas 160 k"
+  },
+  {
+    "Nro": 45,
+    "DESCRIPCION": "ventosa 2 copas"
+  },
+  {
+    "Nro": 46,
+    "DESCRIPCION": "freno hidraulico Haydely"
+  },
+  {
+    "Nro": 47,
+    "DESCRIPCION": "chapa boton"
+  },
+  {
+    "Nro": 48,
+    "DESCRIPCION": "bisagra l-35 aluminio"
+  },
+  {
+    "Nro": 49,
+    "DESCRIPCION": "bisagra l-25 met (par)"
+  },
+  {
+    "Nro": 50,
+    "DESCRIPCION": "jalador aluminio PEQ. Nat"
+  },
+  {
+    "Nro": 51,
+    "DESCRIPCION": "jalador aluminio mini"
+  },
+  {
+    "Nro": 52,
+    "DESCRIPCION": "jalador aluminio"
+  },
+  {
+    "Nro": 53,
+    "DESCRIPCION": "jalador aluminio cerrado"
+  },
+  {
+    "Nro": 54,
+    "DESCRIPCION": "jalador aluminio abierto"
+  },
+  {
+    "Nro": 55,
+    "DESCRIPCION": "Cinta estructural transparente rojo"
+  },
+  {
+    "Nro": 56,
+    "DESCRIPCION": "Cinta estructural roja"
+  },
+  {
+    "Nro": 57,
+    "DESCRIPCION": "Cinta estructural transparente verde"
+  },
+  {
+    "Nro": 58,
+    "DESCRIPCION": "Cinta estructural azul"
+  },
+  {
+    "Nro": 59,
+    "DESCRIPCION": "tornillo barril"
+  }
+]
+
 export const datos = [
     {
       "id": 1,

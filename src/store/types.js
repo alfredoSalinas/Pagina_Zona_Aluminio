@@ -6,6 +6,7 @@ const GET_CLIENT = 'GET_CLIENTS'
 const ADD_CLIENT = 'ADD_CLIENTS'
 const ADD_QUOTE = 'ADD_QUOTE'
 const ADD_PRODUCT = 'ADD_PRODUCT'
+const ADD_FOTO = 'ADD_FOTO'
 
 export {
     ADMIN,
@@ -16,4 +17,5 @@ export {
     ADD_CLIENT,
     ADD_QUOTE,
     ADD_PRODUCT,
+    ADD_FOTO
 }

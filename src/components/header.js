@@ -1,26 +1,21 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import Hidden from '@material-ui/core/Hidden';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle'
 import Drawer from '@material-ui/core/Drawer';
 import Divider from '@material-ui/core/Divider';
-import List from '@material-ui/core/List';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
 //import { authenticate } from '../services/productService';
 import { useSelector, useDispatch } from 'react-redux'
 //import db from '../firebase.config'
 import firebase from 'firebase/app'
-import { Avatar } from '@material-ui/core'
+import "firebase/auth";
+import { Avatar, Button, List, ListItem, ListItemText } from '@material-ui/core'
 import MenuListComposition from '../common/components/menu'
 import logo from '../images/logo.png'
 import {
@@ -28,6 +23,8 @@ import {
 } from "react-router-dom";
 import { signIn, signOut } from '../store/actions/auth.actions';
 //import { db } from '../services/firebase/setup'
+import DrawerMenu from '../common/components/drawerMenu';
+
 
 const drawerWidth = 240;
 
@@ -200,44 +197,14 @@ const useStyles = makeStyles((theme) =>
         open={open}
         classes={{
           paper: classes.drawerPaper,
-        }}
-      >
+        }}>
         <div className={classes.drawerHeader}>
           <IconButton onClick={handleDrawerClose}>
             <ChevronRightIcon />
           </IconButton>
         </div>
         <Divider />
-        <li>
-          <Link to="/" 
-            style={{textDecoration: 'none', color: 'inherit'}}
-            onClick={handleDrawerClose}>
-            Presentacion
-          </Link>
-        </li>
-        <details>
-          <summary>Aluminio</summary>
-          <ul>
-            <li>Alumnio 1</li>
-            <li>Alumnio 2</li>
-          </ul>
-        </details>
-        <details>
-          <summary>Vidrio templado</summary>
-          <ul>
-            <li><Link to="/kits" 
-              style={{textDecoration: 'none', color: 'inherit'}}
-              onClick={handleDrawerClose}>
-              Kits
-            </Link></li>
-            <li><Link to="/herrajes" 
-              style={{textDecoration: 'none', color: 'inherit'}}
-              onClick={handleDrawerClose}>
-              Herrajes correr
-            </Link></li>
-            <li>Herrajes 2</li>
-          </ul>
-        </details>
+        <DrawerMenu drawerClose={handleDrawerClose}/>        
       </Drawer>
     </div>
   );

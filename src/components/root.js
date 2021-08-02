@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 
 const Root = (props)=>{
     const isReady = useSelector(state => state.auth.authReady)
-    if(!isReady){
+    if(false){
         return <div>Loading......</div> 
     }
 
