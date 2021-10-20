@@ -1,4 +1,4 @@
-import { ADD_QUOTE } from "../types";
+import { ADD_PEDIDO, ADD_QUOTE } from "../types";
 
 const initialState = {
     orders:[]
@@ -11,6 +11,11 @@ export default (state=initialState, action)=>{
             ...state,
             orders: [...state.orders, action.payload]
         };
+        case ADD_PEDIDO:
+            return {
+                ...state,
+                orders: action.payload
+            }
         default:
         return state;
     }

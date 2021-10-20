@@ -53,7 +53,7 @@ const ComponentCard = ({tarjeta})=> {
         <img src={tarjeta.foto} className={classes.media}/>
       </CardMedia>
       <CardContent style={{borderTop: 'solid'}}>
-        <Typography variant="body2" color="textSecondary" component="p">
+        <Typography variant="body2" color="textSecondary" component="p" style={{fontSize:22}}>
           {tarjeta.description}
         </Typography>
       </CardContent>

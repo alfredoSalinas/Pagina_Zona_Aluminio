@@ -1,4 +1,4 @@
-/*
+
 import { db } from './firebase'
 import firebase from 'firebase/app'
 import storage from 'firebase/storage'
@@ -55,4 +55,3 @@ export const getFotoProducto = idFoto => {
     return urlFoto
 }
 
-*/

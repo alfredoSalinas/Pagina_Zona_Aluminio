@@ -60,27 +60,27 @@ export default function DataTable() {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
   const [productos, setProductos] = React.useState([])
-  
-  const usuario = ()=>{
+
+  const usuario = () => {
     const provider = new firebase.auth.GoogleAuthProvider()
     firebase.auth().signInWithPopup(provider)
-        .then(result => {
-          console.log('Resultado ', result.user.uid)
-          dispatch(signIn({
-            id: result.user.uid,
-            name: result.user.displayName,
-            email: result.user.email,
-            foto: result.user.photoURL
-          }))
-        })
-        .catch(err =>{
-          console.log(err.message)
-        })
-    firebase.auth().onAuthStateChanged(user =>{
+      .then(result => {
+        console.log('Resultado ', result.user.uid)
+        dispatch(signIn({
+          id: result.user.uid,
+          name: result.user.displayName,
+          email: result.user.email,
+          foto: result.user.photoURL
+        }))
+      })
+      .catch(err => {
+        console.log(err.message)
+      })
+    firebase.auth().onAuthStateChanged(user => {
       if (user) {
         console.log(user.displayName)
       } else {
-           console.log("usuario null");
+        console.log("usuario null");
       }
     })
   }
@@ -97,7 +97,7 @@ export default function DataTable() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    if(!isSignin){
+    if (!isSignin) {
       usuario()
     }
     setProductos(rows)
@@ -119,6 +119,7 @@ export default function DataTable() {
       "cantidad": 1,
       "unidad": row.unidad,
       "precio": row.precio,
+      "total": row.precio * 1
     }
     dispatch(addOrder(pedido))
   }
